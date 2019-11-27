@@ -10,7 +10,7 @@ public class FoodTruckStart {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to Food Truck Reviewer 5000" + ", you may review up to 5 trucks "
-				+ "enter 5 or quit when you are finished:");
+				+ "enter up to 5 new trucks or quit when you are finished:");
 
 		System.out.print("Name: ");
 		String name = sc.next();
