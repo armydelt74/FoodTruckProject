@@ -1,12 +1,14 @@
 package com.skilldistillery.foodtrucks;
 
 public class FoodTruck {
-	public int tID;
-	public String name;
-	public String food;
-	public double rated;
+	private int tID;
+	private String name;
+	private String food;
+	private int rated;
+	private static int nextID = 1;
 		
 	public FoodTruck() {
+		this.tID = nextID++;
 		
 //		int tID;
 //		String name;
@@ -15,8 +17,8 @@ public class FoodTruck {
 	}
 	
 	
-	public FoodTruck(int tID, String name, String food, double rated) {
-		this.tID = tID;
+	public FoodTruck(String name, String food, int rated) {
+		this.tID = nextID++;
 		this.name = name;
 		this.food = food;
 		this.rated = rated;		
@@ -42,7 +44,7 @@ public class FoodTruck {
 	public double getRated() {
 		return rated;
 	}
-	public void setRated(double rated) {
+	public void setRated(int rated) {
 		this.rated = rated;
 	}
 	
@@ -54,7 +56,7 @@ public class FoodTruck {
 
 	  public void displayFoodTruck() {
 	    String truckData = this.toString();
-	    System.out.println(truckData);
+	    System.out.println(" " + truckData + " ");
 	  
 	}
 }

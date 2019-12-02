@@ -9,44 +9,69 @@ public class FoodTruckStart {
 		FoodTruck[] truck = new FoodTruck[5];
 
 		Scanner sc = new Scanner(System.in);
+
 		System.out.println("Welcome to Food Truck Reviewer 5000" + ", you may review up to 5 trucks "
-				+ "enter up to 5 new trucks or quit when you are finished:");
+				+ "enter up to 5 new trucks or enter 'quit' when you are finished:");
 
-		System.out.print("Name: ");
-		String name = sc.next();
+		for (int i = 0; i < 5; i++) {
+			System.out.print("Name: ");
+			if (sc.hasNext("quit"))
+				quit();
 
-		System.out.print("Food: ");
-		String food = sc.next();
+				String name = sc.next();
 
-		System.out.print("Score (0.0 to 5.0): ");
-		double rated = sc.nextDouble();
+				System.out.print("Food: ");
+				String food = sc.next();
 
-		FoodTruck t = new FoodTruck();
+				System.out.print("Score (0 to 5): ");
+				int rated = sc.nextInt();
 
-		t.name = name;
-		t.food = food;
-		t.rated = rated;
+				FoodTruck t = new FoodTruck();
+				t.setName(name);
+				t.setFood(food);
+				t.setRated(rated);
+				truck[i] = t;
 
-		t.displayFoodTruck();
+				t.displayFoodTruck();
 
-		// Put the user in a loop until they enter a valid option
-		boolean calcDone = false;
-		do {
-			System.out.print("Enter (C) to calculate the average ratings for all Food Trucks (E) to exit: ");
-			String cOrE = sc.next();
-			switch (cOrE) {
-			case "C":
-//		          double arating = avg(rating);
-//		          System.out.println("Average Rating for all Food Trucks is " + arating);
-				calcDone = true;
-				break;
-			case "E":
-				System.out.println("Exiting...");
-				break;
+				t.toString();
+
 			}
-		} while (calcDone == false);
+			printMenu();{
+				int i = sc.nextInt();
+				if(i == 1); System.out.println(truck.toString());
+				if(i == 4);System.exit(0);
+				
+			}
+
+		
 
 		sc.close();
+	}
+
+	public static void printMenu() {
+		System.out.println("Select an option and enter your integer choice: ");
+		System.out.println("1: List all food trucks");
+		System.out.println("2: Average rating of food trucks");
+		System.out.println("3: Display highest-rated food truck");
+		System.out.println("4: Quit");
+
+		// Put the user in a loop until they enter a valid option
+//		boolean calcDone = false;
+//		do {
+//			System.out.print("Enter (C) to calculate the average ratings for all Food Trucks (E) to exit: ");
+//			String cOrE = sc.next();
+//			switch (cOrE) {
+//			case "C":
+////          double arating = avg(FoodTruck[]);
+//          System.out.println("Average Rating for all Food Trucks is " + arating);
+//				calcDone = true;
+//				break;
+//			case "E":
+//				System.out.println("Exiting...");
+//				break;
+//			}
+//		} while (calcDone == false);
 
 //		  public static double avgRating(double rated) {
 //		    double arating = sum all ratings / num ratings;
@@ -92,6 +117,22 @@ public class FoodTruckStart {
 //		truck[2] = kc;
 //		truck[3] = nn;
 //		truck[4] = sg;
+
+//	}
+
+//	private static void displayFoodTruck() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void quit() {
+		{
+			System.out.println("Test Quit");
+			printMenu();
+			;
+		} // TODO Auto-generated method stub
+
+		// TODO Auto-generated method stub
 
 	}// main
 }// class
