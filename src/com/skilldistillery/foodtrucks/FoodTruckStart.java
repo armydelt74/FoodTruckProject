@@ -10,41 +10,44 @@ public class FoodTruckStart {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Welcome to Food Truck Reviewer 5000" + ", you may review up to 5 trucks "
-				+ "enter up to 5 new trucks or enter 'quit' when you are finished:");
+		System.out.println("Welcome to Food Truck Reviewer 5000," + "\n" + " you may review up to 5 trucks "
+				+ "\n or enter 'quit' when you are finished:");
 
 		for (int i = 0; i < 5; i++) {
 			System.out.print("Name: ");
 			if (sc.hasNext("quit"))
 				quit();
 
-				String name = sc.next();
+			String name = sc.next();
 
-				System.out.print("Food: ");
-				String food = sc.next();
+			System.out.print("Food: ");
+			String food = sc.next();
 
-				System.out.print("Score (0 to 5): ");
-				int rated = sc.nextInt();
+			System.out.print("Score (0 to 5): ");
+			int rated = sc.nextInt();
 
-				FoodTruck t = new FoodTruck();
-				t.setName(name);
-				t.setFood(food);
-				t.setRated(rated);
-				truck[i] = t;
+			FoodTruck t = new FoodTruck();
+			t.setName(name);
+			t.setFood(food);
+			t.setRated(rated);
+			truck[i] = t;
 
-				t.displayFoodTruck();
+			t.displayFoodTruck();
 
-				t.toString();
+			t.toString();
 
+		}
+		printMenu();
+		{
+			int i = sc.nextInt();
+			if (i == 1) {
+				allTruck(truck);
 			}
-			printMenu();{
-				int i = sc.nextInt();
-				if(i == 1); System.out.println(truck.toString());
-				if(i == 4);System.exit(0);
-				
-			}
+			if (i == 4)
+				;
+			System.exit(0);
 
-		
+		}
 
 		sc.close();
 	}
@@ -55,7 +58,14 @@ public class FoodTruckStart {
 		System.out.println("2: Average rating of food trucks");
 		System.out.println("3: Display highest-rated food truck");
 		System.out.println("4: Quit");
+	}
 
+	public static void allTruck(FoodTruck[] trucks) {
+		for (int i = 0; i < trucks.length; i++) {
+			if (trucks[i] != null) {
+				trucks[i].displayFoodTruck();
+			}
+		}
 		// Put the user in a loop until they enter a valid option
 //		boolean calcDone = false;
 //		do {
@@ -76,54 +86,14 @@ public class FoodTruckStart {
 //		  public static double avgRating(double rated) {
 //		    double arating = sum all ratings / num ratings;
 //		    return arating;
-
-//		public int tID;
-//		public String name;
-//		public String food;
-//		public double rated;
-//
-//		FoodTruck tc = new FoodTruck();
-//		tc.tID = 1;
-//		tc.name = "Taco Truck";
-//		tc.food = "Tacos n' Tacos ";
-//		tc.rated = 2.0;
-//
-//		FoodTruck tb = new FoodTruck();
-//		tb.tID = 2;
-//		tb.name = "Tegridy Burgers";
-//		tb.food = " Goo Hemp Burger ";
-//		tb.rated = 5.0;
-//
-//		FoodTruck kc = new FoodTruck();
-//		kc.tID = 3;
-//		kc.name = "Kansas Chicken ";
-//		kc.food = " KC Chicken KC style ";
-//		kc.rated = 3.0;
-//
-//		FoodTruck nn = new FoodTruck();
-//		nn.tID = 4;
-//		nn.name = "Nom Nom";
-//		nn.food = " Nom Nom ";
-//		nn.rated = 5.0;
-//
-//		FoodTruck sg = new FoodTruck();
-//		sg.tID = 5;
-//		sg.name = "Sage Grouse";
-//		sg.food = " Gruff Grouse ";
-//		sg.rated = 1.0;
-//
-//		truck[0] = tc;
-//		truck[1] = tb;
-//		truck[2] = kc;
-//		truck[3] = nn;
-//		truck[4] = sg;
-
-//	}
+//public static oldTrucks()
+//		for (int i = 0; i < trucks.length; i++) {
+//			if (trucks[i] != null) {	
+	}
 
 //	private static void displayFoodTruck() {
 		// TODO Auto-generated method stub
 
-	}
 
 	private static void quit() {
 		{
